@@ -1,26 +1,24 @@
 package hello;
 
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-
 /**
  * Created by Thomas on 1/24/2017.
  */
 
 public class Home {
     private  final long ID;
-    private final String NAME;
+    private final String TITLE;
     private final String DESC;
     private final String EMBEDDED_URL;
 
-    public Home(long id, String name, String desc, String embedded_url) {
-        this.NAME = name;
+    public Home(long id, String title, String desc, String embedded_url) {
+        this.TITLE = title;
         this.DESC = desc;
         this.ID = id;
         this.EMBEDDED_URL = embedded_url;
     }
 
     public String getName(){
-        return NAME;
+        return TITLE;
     }
 
     public String getDesc(){
