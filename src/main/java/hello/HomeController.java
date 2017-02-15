@@ -15,7 +15,7 @@ public class HomeController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/home/featuredPodcasts")
-    public Home home(@RequestParam(value = "name", defaultValue = "none") String name, @RequestParam(value = "desc", defaultValue = "N/A")String desc, @RequestParam(value = "embedded", defaultValue = "none")String url){
-        return new Home(counter.getAndIncrement(), String.format(name), String.format(desc), String.format(url));
+    public Home home(@RequestParam(value = "name", defaultValue = "none") String title, @RequestParam(value = "desc", defaultValue = "N/A")String desc, @RequestParam(value = "embedded", defaultValue = "none")String url){
+        return new Home(counter.getAndIncrement(), String.format(title), String.format(desc), String.format(url));
     }
 }
