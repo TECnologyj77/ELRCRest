@@ -1,54 +1,56 @@
 package hello;
 
-import java.awt.Image;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-
-/**
- * Created by Thomas on 1/24/2017.
- */
 
 public class Show {
-    private final long ID;
+    private final long SHOW_ID;
     private final String SHOW_NAME;
     private final String SHOW_DESC;
-    private final String EMBEDDED_URL;
+    private final String SHOW_IMAGE;
     private final String DJ_NAME;
-    private final String DJ_DESC;
-    private final String DJ_IMAGE;
+    private final String EMBEDDED_URL;
+    private final String PODCAST_TITLE;
+    private final String PODCAST_DESC;
 
-    public Show(long id, String show_name, String desc, String embedded_url, String dj_name, String dj_desc, String dj_image) {
+    public Show(long show_id, String show_name, String show_desc, String show_image, String dj_name,
+                String embedded_url, String podcast_title, String podcast_decs ) {
+        this.SHOW_ID = show_id;
         this.SHOW_NAME = show_name;
-        this.SHOW_DESC = desc;
-        this.ID = id;
-        this.EMBEDDED_URL = embedded_url;
+        this.SHOW_DESC = show_desc;
+        this.SHOW_IMAGE = show_image;
         this.DJ_NAME = dj_name;
-        this.DJ_DESC = dj_desc;
-        this.DJ_IMAGE = dj_image;
+        this.EMBEDDED_URL = embedded_url;
+        this.PODCAST_TITLE = podcast_title;
+        this.PODCAST_DESC = podcast_decs;
+
     }
 
-    public String getName() {
+    public long getShowId() {
+        return SHOW_ID;
+    }
+
+    public String getShow_Name() {
         return SHOW_NAME;
     }
 
-    public String getSHOW_DESC() {
+    public String getShow_Desc() {
         return SHOW_DESC;
     }
 
-    public String getEmbedded_URL() {
-        return EMBEDDED_URL;
+    public String getShow_Image() {
+        return SHOW_IMAGE;
     }
 
     public String getDj_Name() {
         return DJ_NAME;
     }
 
-    public long getId() {
-        return ID;
+    public String getEmbedded_URL() {
+        return EMBEDDED_URL;
     }
 
-    public String getDJ_Desc() {
-        return DJ_DESC;
+    public String getPodcast_Title() {
+        return PODCAST_TITLE;
     }
 
-     public String getDJ_Image(){return DJ_IMAGE;}
+    public String getPodcast_Decs(){return PODCAST_DESC;}
 }
