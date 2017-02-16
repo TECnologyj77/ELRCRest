@@ -15,12 +15,12 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 
 @RestController
-public class AdminController {
+public class NewArtistController {
 
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/admin")
-    public Admin admin() {
+    @RequestMapping("admin/newArtist")
+    public NewArtist newArtist() {
         return null;
     }
 
