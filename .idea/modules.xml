@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ELRCRest.iml" filepath="$PROJECT_DIR$/.idea/modules/ELRCRest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ELRCRest_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ELRCRest_main.iml" group="ELRCRest" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ELRCRest_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ELRCRest_test.iml" group="ELRCRest" />
     </modules>
   </component>
 </project>
