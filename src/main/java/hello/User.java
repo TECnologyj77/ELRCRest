@@ -1,16 +1,16 @@
 package hello;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-/**
- * Created by Greg on 2/15/2017.
- */
 public class User {
 
     private String firstName;
 
     private String lastName;
+
+    private String dJName;
+
+    private String artistDesc;
+
+    public String artistImage;
 
     public User(){}
 
@@ -22,11 +22,35 @@ public class User {
         this.lastName = lastName;
     }
 
+    public void setDJName(String dJName){
+        this.dJName= dJName;
+    }
+
+    public void setArtistDesc(String artistDesc){
+        this.artistDesc = artistDesc;
+    }
+
+    public void setArtistImage(String artistImage){
+        this.artistImage = artistImage;
+    }
+
     public String getFirstName(){
         return firstName;
     }
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getDJName() {
+        return dJName;
+    }
+
+    public String getArtistDesc(){
+        return artistDesc;
+    }
+
+    public String getArtistImage(){
+        return artistImage;
     }
 }

@@ -6,13 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 import java.util.concurrent.atomic.AtomicLong;
 
-/**
- * Created by Thomas on 1/24/2017.
- */
+import javax.servlet.http.HttpServletResponse;
+
 
 @RestController
 public class NewArtistController {
@@ -26,7 +23,8 @@ public class NewArtistController {
 
     @RequestMapping(value = "/admin/newArtist", method = RequestMethod.POST)
     public HttpStatus addNewArtist(@RequestBody final User user, HttpServletResponse response) {
-        System.out.println(user.getFirstName() + " " + user.getLastName());
+        System.out.println(user.getFirstName() + " " + user.getLastName() + " " + user.getDJName()
+                + " " + user.getArtistDesc() + " " + user.getArtistImage());
         response.setStatus(HttpServletResponse.SC_OK);
         return HttpStatus.OK;
     }
