@@ -22,7 +22,7 @@ public class NewArtistController {
     }
 
     @RequestMapping(value = "/admin/newArtist", method = RequestMethod.POST)
-    public HttpStatus addNewArtist(@RequestBody final User user, HttpServletResponse response) {
+    public HttpStatus addNewArtist(@RequestBody final NewArtist user, HttpServletResponse response) {
         System.out.println(user.getFirstName() + " " + user.getLastName() + " " + user.getDJName()
                 + " " + user.getArtistDesc() + " " + user.getArtistImage());
         response.setStatus(HttpServletResponse.SC_OK);
