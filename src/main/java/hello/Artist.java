@@ -31,6 +31,11 @@ public class Artist {
 		setDjDesc(dj_desc);
 		setDjImage(dj_image);
 	}
+	
+	public Artist()
+	{
+		
+	}
 
 	public String getArtistName() {
 		return artistName;
@@ -70,5 +75,11 @@ public class Artist {
 
 	public void setDjImage(String djImage) {
 		this.djImage = djImage;
+	}
+	
+	public String toString(){
+		
+		return artistId + " : " + artistName + " : " + artistDesc;
+		
 	}
 }
