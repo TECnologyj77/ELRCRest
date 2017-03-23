@@ -9,5 +9,8 @@ import org.springframework.data.repository.CrudRepository;
 public interface ArtistDao extends CrudRepository<Artist, Long> {
 
 	public ArrayList<Artist> findByArtistName(String artistName);
+	//public ArrayList<Artist> findByDJName(String djName);
+
+
 
 }
