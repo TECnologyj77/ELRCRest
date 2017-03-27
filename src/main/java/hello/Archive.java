@@ -1,29 +1,37 @@
 package hello;
 
-/**
- * Created by Thomas on 1/26/2017.
- */
+import javax.persistence.*;
 
+@Entity
+@Table(name = "archive")
 public class Archive {
-    private final long ID;
-    private final String PODCAST_NAME;
-    private final String PODCAST_THUMBNAIL;
 
-    public Archive(long id, String podcastName, String podcastThumbnail) {
-        ID = id;
-        PODCAST_NAME = podcastName;
-        PODCAST_THUMBNAIL = podcastThumbnail;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long podcastID;
+    private String podcastName;
+    private String podcastThumbnail;
+
+    public Archive(String podcast_Name, String podcast_Thumbnail) {
+        setPodcastName(podcast_Name);
+        setPodcastThumbnail(podcast_Thumbnail);
     }
 
-    public long getID(){
-        return ID;
+    public Archive() {
+
     }
 
-    public String getPodcastName(){
-        return  PODCAST_NAME;
+    public void setPodcastName(String podcastName) {
+        this.podcastName = podcastName;
     }
 
-    public String getPodcstThumbnail(){
-        return PODCAST_THUMBNAIL;
+    public void setPodcastThumbnail(String podcastThumbnail) {
+        this.podcastThumbnail = podcastThumbnail;
+    }
+
+    public String toString() {
+
+        return podcastID + " : " + podcastName + " : " + podcastThumbnail;
+
     }
 }

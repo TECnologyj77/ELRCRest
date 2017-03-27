@@ -2,9 +2,6 @@ package hello;
 
 import javax.persistence.*;
 
-/**
- * Created by Thomas on 1/26/2017.
- */
 @Entity
 @Table(name = "artists")
 public class Artist {
