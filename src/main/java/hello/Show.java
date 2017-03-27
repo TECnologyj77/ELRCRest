@@ -1,56 +1,69 @@
 package hello;
 
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "shows")
 public class Show {
-    private final long SHOW_ID;
-    private final String SHOW_NAME;
-    private final String SHOW_DESC;
-    private final String SHOW_IMAGE;
-    private final String DJ_NAME;
-    private final String EMBEDDED_URL;
-    private final String PODCAST_TITLE;
-    private final String PODCAST_DESC;
 
-    public Show(long show_id, String show_name, String show_desc, String show_image, String dj_name,
-                String embedded_url, String podcast_title, String podcast_decs ) {
-        this.SHOW_ID = show_id;
-        this.SHOW_NAME = show_name;
-        this.SHOW_DESC = show_desc;
-        this.SHOW_IMAGE = show_image;
-        this.DJ_NAME = dj_name;
-        this.EMBEDDED_URL = embedded_url;
-        this.PODCAST_TITLE = podcast_title;
-        this.PODCAST_DESC = podcast_decs;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long showID;
+    private String showName;
+    private String showDesc;
+    private String showImage;
+    private String djName;
+    private String embeddedURL;
+    private String podcastTitle;
+    private String podcastDesc;
+
+    public Show(String show_name, String show_desc, String show_image, String dj_name,
+                String embedded_url, String podcast_title, String podcast_desc) {
+        setShowName(show_name);
+        setShowDesc(show_desc);
+        setShowImage(show_image);
+        setDJName(dj_name);
+        setEmbeddedURL(embedded_url);
+        setPodcastTitle(podcast_title);
+        setPodcastDesc(podcast_desc);
+    }
+
+    public Show() {
 
     }
 
-    public long getShowId() {
-        return SHOW_ID;
+    public void setShowName(String showName) {
+        this.showName = showName;
     }
 
-    public String getShow_Name() {
-        return SHOW_NAME;
+    public void setShowDesc(String showDesc) {
+        this.showDesc = showDesc;
     }
 
-    public String getShow_Desc() {
-        return SHOW_DESC;
+    public void setShowImage(String showImage) {
+        this.showImage = showImage;
     }
 
-    public String getShow_Image() {
-        return SHOW_IMAGE;
+    public void setDJName(String djName) {
+        this.djName = djName;
     }
 
-    public String getDj_Name() {
-        return DJ_NAME;
+    public void setEmbeddedURL(String embeddedURL) {
+        this.embeddedURL = embeddedURL;
     }
 
-    public String getEmbedded_URL() {
-        return EMBEDDED_URL;
+    public void setPodcastTitle(String podcastTitle) {
+        this.podcastTitle = podcastTitle;
     }
 
-    public String getPodcast_Title() {
-        return PODCAST_TITLE;
+    public void setPodcastDesc(String podcastDesc) {
+        this.podcastDesc = podcastDesc;
     }
 
-    public String getPodcast_Decs(){return PODCAST_DESC;}
+    public String toString() {
+
+        return showID + " : " + showName + " : " + showDesc;
+
+    }
 }
