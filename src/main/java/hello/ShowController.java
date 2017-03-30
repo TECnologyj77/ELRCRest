@@ -14,7 +14,7 @@ public class ShowController {
     private ShowDao showDao;
 
     @RequestMapping("/shows/artistShow")
-    public Show show(@RequestParam(value = "show_name", defaultValue = "none") String name,
+    public ArrayList<Show> show(@RequestParam(value = "show_name", defaultValue = "none") String name,
                      @RequestParam(value = "showDesc", defaultValue = "none") String showDesc,
                      @RequestParam(value = "show_image", defaultValue = "none") String show_image,
                      @RequestParam(value = "dj_name", defaultValue = "none") String dj_name,
@@ -35,8 +35,7 @@ public class ShowController {
             showDao.save(buildDBShows.get(i));
         }
 
-        Show getShow = showDao.findOne((long) 3);
-        return showDao.save(getShow);
+        return buildDBShows;
 
     }
 }

@@ -23,7 +23,7 @@ public class Show {
         setShowName(show_name);
         setShowDesc(show_desc);
         setShowImage(show_image);
-        setDJName(dj_name);
+        setDjName(dj_name);
         setEmbeddedURL(embedded_url);
         setPodcastTitle(podcast_title);
         setPodcastDesc(podcast_desc);
@@ -33,37 +33,60 @@ public class Show {
 
     }
 
+
+    public String getShowName() {
+        return showName;
+    }
+
     public void setShowName(String showName) {
         this.showName = showName;
+    }
+
+    public String getShowDesc() {
+        return showDesc;
     }
 
     public void setShowDesc(String showDesc) {
         this.showDesc = showDesc;
     }
 
+    public String getShowImage() {
+        return showImage;
+    }
+
     public void setShowImage(String showImage) {
         this.showImage = showImage;
     }
 
-    public void setDJName(String djName) {
+    public String getDjName() {
+        return djName;
+    }
+
+    public void setDjName(String djName) {
         this.djName = djName;
+    }
+
+    public String getEmbeddedURL() {
+        return embeddedURL;
     }
 
     public void setEmbeddedURL(String embeddedURL) {
         this.embeddedURL = embeddedURL;
     }
 
+    public String getPodcastTitle() {
+        return podcastTitle;
+    }
+
     public void setPodcastTitle(String podcastTitle) {
         this.podcastTitle = podcastTitle;
     }
 
-    public void setPodcastDesc(String podcastDesc) {
-        this.podcastDesc = podcastDesc;
+    public String getPodcastDesc() {
+        return podcastDesc;
     }
 
-    public String toString() {
-
-        return showID + " : " + showName + " : " + showDesc;
-
+    public void setPodcastDesc(String podcastDesc) {
+        this.podcastDesc = podcastDesc;
     }
 }

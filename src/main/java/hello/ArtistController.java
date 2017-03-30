@@ -15,11 +15,11 @@ public class ArtistController {
 	private ArtistDao artistDao;
 
 	@RequestMapping("/artists/all_artists")
-	public Artist artist(@RequestParam(value = "artist_name", defaultValue = "none") String artist_name,
-						 @RequestParam(value = "artist_desc", defaultValue = "none") String artist_desc,
-						 @RequestParam(value = "DJ_name", defaultValue = "none") String DJ_name,
-						 @RequestParam(value = "DJ_desc", defaultValue = "none") String DJ_desc,
-						 @RequestParam(value = "DJ_image", defaultValue = "none") String DJ_image) {
+	public ArrayList<Artist> artist(@RequestParam(value = "artist_name", defaultValue = "none") String artist_name,
+									@RequestParam(value = "artist_desc", defaultValue = "none") String artist_desc,
+									@RequestParam(value = "DJ_name", defaultValue = "none") String DJ_name,
+									@RequestParam(value = "DJ_desc", defaultValue = "none") String DJ_desc,
+									@RequestParam(value = "DJ_image", defaultValue = "none") String DJ_image) {
 
 
 		ArrayList<Artist> buildDBArtists = new ArrayList<Artist>();
@@ -34,12 +34,12 @@ public class ArtistController {
 			artistDao.save(buildDBArtists.get(i));
 		}
 
-		Artist  getArtist = artistDao.findOne((long)3);
-		return artistDao.save(getArtist);
+		return buildDBArtists;
 	}
 }
 
 /*
+	   Artist  getArtist = artistDao.findOne((long)3);
 	   ArrayList<Artist> findArtist = artistDao.findByArtistName(artist_name);
 	   System.out.println(findArtist);
 	   Artist getTeacherArtist = artistDao.findOne((long)13);

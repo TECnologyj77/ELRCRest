@@ -14,7 +14,7 @@ public class ArchiveController {
     private ArchiveDao archiveDao;
 
     @RequestMapping("archive/all_podcasts")
-    public Archive archive(@RequestParam(value = "podcastName", defaultValue = "none") String podcastName,
+    public ArrayList<Archive> archive(@RequestParam(value = "podcastName", defaultValue = "none") String podcastName,
                            @RequestParam(value = "podcastThumbnail", defaultValue = "none")String podcastThumbnail){
 
 
@@ -31,7 +31,6 @@ public class ArchiveController {
             archiveDao.save(buildDBArchive.get(i));
         }
 
-        Archive getArchiveVideo = archiveDao.findOne((long)3);
-        return archiveDao.save(getArchiveVideo);
+        return buildDBArchive;
     }
 }

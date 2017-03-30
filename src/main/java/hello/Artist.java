@@ -27,30 +27,43 @@ public class Artist {
 
 	}
 
+	public String getArtistName() {
+		return artistName;
+	}
 
 	public void setArtistName(String artistName) {
 		this.artistName = artistName;
+	}
+
+	public String getArtistDesc() {
+		return artistDesc;
 	}
 
 	public void setArtistDesc(String artistDesc) {
 		this.artistDesc = artistDesc;
 	}
 
+	public String getDjName() {
+		return djName;
+	}
+
 	public void setDjName(String djName) {
 		this.djName = djName;
+	}
+
+	public String getDjDesc() {
+		return djDesc;
 	}
 
 	public void setDjDesc(String djDesc) {
 		this.djDesc = djDesc;
 	}
 
-	public void setDjImage(String djImage) {
-		this.djImage = djImage;
+	public String getDjImage() {
+		return djImage;
 	}
 
-	public String toString() {
-
-		return artistId + " : " + artistName + " : " + artistDesc;
-
+	public void setDjImage(String djImage) {
+		this.djImage = djImage;
 	}
 }

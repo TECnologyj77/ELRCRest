@@ -1,16 +1,13 @@
 package hello;
 
-import java.util.ArrayList;
+import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;
-import org.springframework.data.repository.CrudRepository;
+import java.util.ArrayList;
 
 @Transactional
 public interface ArtistDao extends CrudRepository<Artist, Long> {
 
-	public ArrayList<Artist> findByArtistName(String artistName);
-	//public ArrayList<Artist> findByDJName(String djName);
-
-
+	public ArrayList<Archive> findByArtistName(String artistName);
 
 }

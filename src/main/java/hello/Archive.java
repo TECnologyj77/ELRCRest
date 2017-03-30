@@ -21,17 +21,19 @@ public class Archive {
 
     }
 
+    public String getPodcastName() {
+        return podcastName;
+    }
+
     public void setPodcastName(String podcastName) {
         this.podcastName = podcastName;
     }
 
-    public void setPodcastThumbnail(String podcastThumbnail) {
-        this.podcastThumbnail = podcastThumbnail;
+    public String getPodcastThumbnail() {
+        return podcastThumbnail;
     }
 
-    public String toString() {
-
-        return podcastID + " : " + podcastName + " : " + podcastThumbnail;
-
+    public void setPodcastThumbnail(String podcastThumbnail) {
+        this.podcastThumbnail = podcastThumbnail;
     }
 }
