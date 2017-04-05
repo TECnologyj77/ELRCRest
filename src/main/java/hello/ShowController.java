@@ -56,7 +56,7 @@ public class ShowController {
                      @RequestParam(value = "podcast_title", defaultValue = "none") String podcast_title,
                      @RequestParam(value = "podcast_desc", defaultValue = "none") String podcast_desc) throws SQLException {
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/elrc_radio?useSSL=false", "root", "admin");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/elrc_radio?useSSL=false", "root", "Fredex%7");
         //SQL query
         String query = "SELECT * FROM show";
         Statement st = conn.createStatement();

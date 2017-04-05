@@ -26,6 +26,10 @@ public class Artist {
 	public Artist() {
 
 	}
+	
+	public long getArtistId(){
+		return artistId;
+	}
 
 	public String getArtistName() {
 		return artistName;
