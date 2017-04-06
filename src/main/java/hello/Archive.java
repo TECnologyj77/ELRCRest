@@ -21,6 +21,10 @@ public class Archive {
 
     }
 
+    public long getPodcastID(){
+        return podcastID;
+    }
+
     public String getPodcastName() {
         return podcastName;
     }

@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import java.sql.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 @RestController
@@ -20,7 +19,9 @@ public class ArtistController {
 	public void saveArtistList() {
 
 		ArrayList<Artist> buildDBArtists = new ArrayList<Artist>();
+
 		buildDBArtists.clear();
+
 		buildDBArtists.add(new Artist("Greg 'the Professor' Lang", "Artist Description", "DJ Greg",
 				"Greg's Description", "Bio Pic"));
 		buildDBArtists.add(new Artist("Ryan 'the Corporal' Couch", "Artist Description", "DJ Ryan",
@@ -46,7 +47,9 @@ public class ArtistController {
 		}
 
 		Iterable<Artist> artistsFromDB = artistDao.findAll();
+
 		ArrayList<Artist> artists = new ArrayList<Artist>();
+
 		for (Artist item : artistsFromDB) {
 			artists.add(item);
 		}
@@ -62,14 +65,3 @@ public class ArtistController {
 		return added.getArtistId();
 	}
 }
-
-/*
- * Artist getArtist = artistDao.findOne((long)3); ArrayList<Artist> findArtist =
- * artistDao.findByArtistName(artist_name); System.out.println(findArtist);
- * Artist getTeacherArtist = artistDao.findOne((long)13);
- * System.out.println(getTeacherArtist);
- * getTeacherArtist.setDjName("DJ Jazzy Jeff"); //Artist artist = new
- * Artist(String.format(artist_name), String.format(artist_desc),
- * String.format(DJ_name), String.format(DJ_desc), String.format(DJ_image));
- * return artistDao.save(getTeacherArtist); }
- */

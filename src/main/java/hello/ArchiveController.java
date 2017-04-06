@@ -1,36 +1,26 @@
 package hello;
 
-import javafx.scene.shape.Arc;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping("archive/all_podcasts")
 public class ArchiveController {
 
-    private ArrayList<Archive> savedArchive;
-
-
-
-    private String podcastNam;
-    private String podcastThumb;
-    private Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/elrc_radio?useSSL=false", "root", "admin");
-    private Statement st = conn.createStatement();
-    private String drop = "DROP TABLE ARCHIVE";
     @Autowired
     private ArchiveDao archiveDao;
 
-    public ArchiveController() throws SQLException {
-    }
-
-
-    public ArrayList<Archive> saveArchiveList() throws SQLException {
+    public void saveArchiveList() {
 
         ArrayList<Archive> buildDBArchive = new ArrayList<Archive>();
+
+        buildDBArchive.clear();
 
         buildDBArchive.add(new Archive("Greg's Podcast Title", "Greg's Thumbnail"));
         buildDBArchive.add(new Archive("Ryan's Podcast Title", "Ryan's Thumbnail"));
@@ -39,34 +29,31 @@ public class ArchiveController {
         buildDBArchive.add(new Archive("Khalid's Podcast Title", "Khalid's Thumbnail"));
         buildDBArchive.add(new Archive("Kennys's Podcast Title", "Kenny's Thumbnail"));
 
-        savedArchive = buildDBArchive;
-       // st.executeUpdate(drop);
-        archiveDao.save(savedArchive);
-
-        return savedArchive;
+        archiveDao.save(buildDBArchive);
     }
 
+    @RequestMapping(method = RequestMethod.GET)
+    public ArrayList<Archive> getArchive() throws SQLException {
 
-
-    @RequestMapping("archive/all_podcasts")
-    public ArrayList<Archive> archive(@RequestParam(value = "podcastName", defaultValue = "none") String podcastName,
-                           @RequestParam(value = "podcastThumbnail", defaultValue = "none")String podcastThumbnail) throws SQLException {
-
-
-        //SQL query
-        String query = "SELECT * FROM archive";
-        String drop = "DROP TABLE ARCHIVE";
-        Statement st = conn.createStatement();
-
-        saveArchiveList();
-
-        ResultSet rs = st.executeQuery(query);
-        while(rs.next()){
-
-            podcastNam = rs.getString("podcast_Name");
-            podcastThumb = rs.getString("podcast_Thumbnail");
+        if (archiveDao.findOne((long) 1) == null) {
+            saveArchiveList();
         }
 
-        return null;
+        Iterable<Archive> archiveFromDB = archiveDao.findAll();
+
+        ArrayList<Archive> archives = new ArrayList<Archive>();
+
+        for (Archive item : archiveFromDB){
+            archives.add(item);
+        }
+        return archives;
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public long addArchive(@RequestBody Archive input) throws SQLException {
+
+        Archive added = archiveDao.save(input);
+
+        return added.getPodcastID();
     }
 }

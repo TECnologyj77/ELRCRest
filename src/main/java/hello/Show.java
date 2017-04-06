@@ -33,6 +33,9 @@ public class Show {
 
     }
 
+    public long getShowID(){
+        return showID;
+    }
 
     public String getShowName() {
         return showName;
