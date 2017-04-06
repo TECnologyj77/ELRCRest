@@ -18,7 +18,7 @@ public class ArchiveController {
 
     private String podcastNam;
     private String podcastThumb;
-    private Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/elrc_radio?useSSL=false", "root", "Fredex%7");
+    private Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/elrc_radio?useSSL=false", "root", "admin");
     private Statement st = conn.createStatement();
     private String drop = "DROP TABLE ARCHIVE";
     @Autowired

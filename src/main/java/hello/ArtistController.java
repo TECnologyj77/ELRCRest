@@ -1,6 +1,7 @@
 package hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,20 +55,9 @@ public class ArtistController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public long addArtist(@RequestParam(value = "artist_name", defaultValue = "none") String artist_name,
-			@RequestParam(value = "artist_desc", defaultValue = "none") String artist_desc,
-			@RequestParam(value = "DJ_name", defaultValue = "none") String DJ_name,
-			@RequestParam(value = "DJ_desc", defaultValue = "none") String DJ_desc,
-			@RequestParam(value = "DJ_image", defaultValue = "none") String DJ_image) throws SQLException {
+	public long addArtist(@RequestBody Artist input) throws SQLException {
 
-		Artist newArtist = new Artist();
-		newArtist.setArtistName(artist_name);
-		newArtist.setArtistDesc(artist_desc);
-		newArtist.setDjDesc(DJ_desc);
-		newArtist.setDjImage(DJ_image);
-		newArtist.setDjName(DJ_name);
-
-		Artist added = artistDao.save(newArtist);
+		Artist added = artistDao.save(input);
 
 		return added.getArtistId();
 	}
