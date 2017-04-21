@@ -23,18 +23,18 @@ public class ArtistController {
 		buildDBArtists.clear();
 
 		buildDBArtists.add(new Artist("Greg 'the Professor' Lang", "Artist Description", "DJ Greg",
-				"Greg's Description", "Bio Pic"));
+				"Hi, my name is Greg. I love cowboy hats and aviators!", "http://earthboundexpeditions.com/wp-content/uploads/2017/03/tn_Paul-in-Cuba_host-thumb.jpg"));
 		buildDBArtists.add(new Artist("Ryan 'the Corporal' Couch", "Artist Description", "DJ Ryan",
-				"Ryan's Description", "Bio Pic"));
+				"Yo, my name is Ryan. I love to be sarcastic, blow stuff up and code things!", "https://www.military-ranks.org/images/ranks/marinecorps/large/xcorporal.png.pagespeed.ic.66TbXXZPVy.png"));
 		buildDBArtists.add(
-				new Artist("Tom 'the Cruise' Carney", "Artist Description", "DJ Tom", "Tom's Description", "Bio Pic"));
+				new Artist("Tom 'the Cruise' Carney", "Artist Description", "DJ Tom", "My name is Cruise, Tom Cruise!", "http://www.freenewimages.com/wp-content/uploads/2017/03/hd-2017-images-tom-cruise-250x250.jpg"));
 		buildDBArtists.add(
-				new Artist("Nate 'TwinTurbo' Irwin", "Artist Description", "DJ Nate", "Nate's Description", "Bio Pic"));
+				new Artist("Nate 'TwinTurbo' Irwin", "Artist Description", "DJ Nate", "My name is Nate, I have no chill...", "https://i2.wp.com/opensourceforu.com/wp-content/uploads/2011/03/coding-error.jpg?resize=200%2C200"));
 		buildDBArtists.add(new Artist("Khalid 'the DJ' Fallatah", "Artist Description", "DJ Khalid",
-				"Khalid's Description", "Bio Pic"));
+				"DJ Khaled, WE DA BEST!!!!", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNbyVvfde1Y8sfP8luHtWJNU6HS-wO_hdleMPomAK584Zz82Kaig"));
 		buildDBArtists.add(new Artist("Kenny 'the Fresh' Swegman", "Artist Description", "DJ Kenny Fresh",
-				"Kenny's Description", "Bio Pic"));
-		buildDBArtists.add(new Artist("Paul Blart", "Artist Description", "DJ Blart", "Paul's Description", "Bio Pic"));
+				"Hi my name is Kenneth Swegman. You can call me Kenny, I like doing stuff for the radio club!", "http://www.rustyzipper.com/images/costumes/250_freshprince.jpg"));
+		buildDBArtists.add(new Artist("Paul Blart", "Artist Description", "DJ Blart", "My name is Paul Blart, I'm a mall cop and such...", "http://vignette1.wikia.nocookie.net/paulblartmallcop/images/5/52/Paul-wiki.jpg/revision/latest?cb=20120709055758"));
 
 		artistDao.save(buildDBArtists);
 	}

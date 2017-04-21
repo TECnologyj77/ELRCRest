@@ -22,12 +22,12 @@ public class ArchiveController {
 
         buildDBArchive.clear();
 
-        buildDBArchive.add(new Archive("Greg's Podcast Title", "Greg's Thumbnail"));
-        buildDBArchive.add(new Archive("Ryan's Podcast Title", "Ryan's Thumbnail"));
-        buildDBArchive.add(new Archive("Tom's Podcast Title", "Tom's Thumbnail"));
-        buildDBArchive.add(new Archive("Nate's Podcast Title", "Nate's Thumbnail"));
-        buildDBArchive.add(new Archive("Khalid's Podcast Title", "Khalid's Thumbnail"));
-        buildDBArchive.add(new Archive("Kennys's Podcast Title", "Kenny's Thumbnail"));
+        buildDBArchive.add(new Archive("Greg's Cowboy Hat Podcast", "https://www.youtube.com/embed/glb2U6y-GdU"));
+        buildDBArchive.add(new Archive("Ryan's HIMAR Podcast", "https://www.youtube.com/embed/oWqCVDhf6Lk"));
+        buildDBArchive.add(new Archive("Tom Cruise's Podcast", "https://www.youtube.com/embed/PLzVbz2HHzo"));
+        buildDBArchive.add(new Archive("Nate's No Chill Podcast", "https://www.youtube.com/embed/AkC6Hb2ZmQs"));
+        buildDBArchive.add(new Archive("Khalid's We Da Best Podcast", "https://www.youtube.com/embed/vHyB_FRr4-M"));
+        buildDBArchive.add(new Archive("Kenny's Fresh Air Podcast", "https://www.youtube.com/embed/x2g5Vw2qpdc"));
 
         archiveDao.save(buildDBArchive);
     }
