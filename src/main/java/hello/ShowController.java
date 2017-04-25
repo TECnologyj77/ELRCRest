@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("shows/artistShow")
+@RequestMapping({"shows/artistShow", "home/featuredPodcasts"})
 public class ShowController {
 
     @Autowired
@@ -39,7 +39,7 @@ public class ShowController {
             saveShowList();
         }
 
-        Iterable<Show> showFromDB = new ArrayList<Show>();
+        Iterable<Show> showFromDB = showDao.findAll();
 
         ArrayList<Show> shows = new ArrayList<Show>();
 
