@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping({"shows/artistShow", "home/featuredPodcasts"})
+@RequestMapping("shows/artistShow")
 public class ShowController {
 
     @Autowired
